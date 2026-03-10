@@ -9,7 +9,7 @@ const userManager = new UserManager({
   //client_id:import.meta.env.client_id,
   client_id:"e77fc3cf-b8d0-4c60-a5e0-e0cbf614247f",
   //client_id: "05d7c408-393e-42c1-bc4a-3741caa0e131",
-  redirect_uri: "https://philipsextension.netlify.app/callback",
+  redirect_uri: `${window.location.origin}/callback`,
   response_type: "code",
   scope: "openid",
 });
