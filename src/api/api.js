@@ -53,9 +53,12 @@ export async function updateAgreement(id, payload) {
     const response = await fetch(`${CONTRACT_URL}/${id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
+       // "Content-Type": "application/json",
+       // Authorization: `Bearer ${accessToken}`,
         // "user-id": "6cfff136-e62b-d435-133d-455fb809c836",
+       "Content-Type": "application/json; charset=utf-8",
+       Authorization: `Bearer ${accessToken}`,
+        
       },
       body: JSON.stringify(payload),
     });
