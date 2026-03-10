@@ -1,6 +1,6 @@
 // src/api/api.js
 import { UserManager, Log, WebStorageStateStore } from "oidc-client-ts";
-import axios from "axios";
+
 const API_URL =
   "https://preview-rls09.congacloud.com/api/data/v1/objects/AgreementLineItem";
 
@@ -105,29 +105,4 @@ export async function getAgreementById(id) {
     console.error(err.message);
   }
 }
-
-const LINE_ITEM_URL =
-  "https://preview-rls09.congacloud.com/api/data/v1/objects/Agreement";
-
-export const fetchAgreement = async () => {
-
-//const response= await line(LINE_ITEM_URL, null,null,null);
-  const token = await getAccessToken();
-
-   //console.log("himanshi "+token);
-  const response = await axios.get(LINE_ITEM_URL, {
-    headers: {
-       Accept: "*/*",
-      Authorization: `Bearer ${token}`,
-     // "user-id": "6cfff136-e62b-d435-133d-455fb809c836",
-      "Access-Control-Allow-Origin":"*",
-      "Access-Control-Allow-Methods":"'GET, POST, OPTIONS, PUT, PATCH, DELETE",
-      "Access-Control-Allow-Headers":"origin,X-Requested-With,content-type,accept",
-      "Access-Control-Allow-Credentials":"true",
-        "Content-Type":"application/json"
-    },
-  });
-
-  return response.data.items || [];
-};
 
