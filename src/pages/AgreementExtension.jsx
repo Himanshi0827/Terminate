@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAgreementById, updateAgreement } from "../api/api";
 import {  useNavigate , useLocation } from "react-router-dom";
+import { fetchAgreement} from "../api/api";
 import "../AgreementExtension.css";
 export default function AgreementExtension() {
  const location = useLocation();//head
