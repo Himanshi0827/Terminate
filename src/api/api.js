@@ -12,6 +12,7 @@ const userManager = new UserManager({
   redirect_uri: `${window.location.origin}/callback`,
   response_type: "code",
   scope: "openid",
+  userStore: new WebStorageStateStore({ store: window.localStorage }),
 });
 
 Log.setLogger(console);
