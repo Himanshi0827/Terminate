@@ -31,10 +31,10 @@ const statusesToConsiderValidity = ["In Authoring","In Signatures"];
   }, []);
 
   const loadAgreement = async () => {
-const data2= await fetchAgreement();
+//const data2= await fetchAgreement();
     const data = await getAgreementById(id);
 console.log("data",data);
-   console.log("data2",data2);
+//   console.log("data2",data2);
     setAgreement(data[0]);
     setEndDate(data[0].ContractEndDate);
 
