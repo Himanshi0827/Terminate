@@ -6,8 +6,8 @@ const API_URL =
 
 const userManager = new UserManager({
   authority: "https://login-rlspreview.congacloud.com/api/v1/auth",
-  client_id:import.meta.env.client_id,
-  //client_id:"e77fc3cf-b8d0-4c60-a5e0-e0cbf614247f",
+  //client_id:import.meta.env.client_id,
+  client_id:"e77fc3cf-b8d0-4c60-a5e0-e0cbf614247f",
   //client_id: "05d7c408-393e-42c1-bc4a-3741caa0e131",
   redirect_uri: "https://localhost:3000/callback",
   response_type: "code",
