@@ -29,25 +29,45 @@ const statusesToConsiderValidity = ["In Authoring","In Signatures"];
     loadAgreement();
   }, []);
 
-  const loadAgreement = async () => {
+//   const loadAgreement = async () => {
 
-    const data = await getAgreementById(id);
-console.log("data",data);
+//     const data = await getAgreementById(id);
+// console.log("data",data);
+//     setAgreement(data[0]);
+//     setEndDate(data[0].ContractEndDate);
+
+//     const validity =
+//       statusesToConsiderValidity.includes(data[0].StatusCategory) ;
+//     //   data.APTS_Agreement_Inserted_Successfully__c === false;
+
+//     setIsValidityScreen(validity);
+// console.log("valid",validity);
+// console.log("valid3",data[0].StatusCategory);
+//     if (validity) {
+//       setStartDate(data[0].ContractStartDate);
+//     }
+//   };
+const loadAgreement = async () => {
+  const data = await getAgreementById(id);
+  console.log("data", data);
+
+  // Check if data exists and has items before trying to access index 0
+  if (data && data.length > 0) {
     setAgreement(data[0]);
     setEndDate(data[0].ContractEndDate);
 
-    const validity =
-      statusesToConsiderValidity.includes(data[0].StatusCategory) ;
-    //   data.APTS_Agreement_Inserted_Successfully__c === false;
-
+    const validity = statusesToConsiderValidity.includes(data[0].StatusCategory);
     setIsValidityScreen(validity);
-console.log("valid",validity);
-console.log("valid3",data[0].StatusCategory);
+
     if (validity) {
       setStartDate(data[0].ContractStartDate);
     }
-  };
-
+  } else {
+    // Handle the error gracefully
+    console.error("No data returned or API call failed");
+    // Optionally: alert("Could not load agreement details.");
+  }
+};
   const handleSave = async () => {
 
     const today = new Date().toISOString().split("T")[0];
