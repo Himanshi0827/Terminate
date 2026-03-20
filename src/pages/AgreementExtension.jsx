@@ -9,7 +9,7 @@ export default function AgreementExtension() {
 
 const id =
   location.state?.agreementId ||
-  "7047caee-8def-4067-8406-e39e83a6c587";
+  "e77fc3cf-b8d0-4c60-a5e0-e0cbf614247f";
 
 const agreementName =
   location.state?.agreementName ||
