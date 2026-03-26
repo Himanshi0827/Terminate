@@ -146,8 +146,8 @@ console.log("final",payload);
  
       toast.success("Agreement updated successfully");
  
-    navigate(`https://preview-rls09.congacloud.com/clm/detail/${id}`);
- 
+   // navigate(`https://preview-rls09.congacloud.com/clm/detail/${id}`);
+ window.location.href = `https://preview-rls09.congacloud.com/clm/detail/${id}`;
     } catch (err) {
  
       console.error(err);
