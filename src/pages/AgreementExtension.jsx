@@ -164,7 +164,13 @@ return (
       <h1>Agreement Extension</h1>
       <div className="header-buttons">
         <button className="btn primary" onClick={handleSave}>Save</button>
-        <button className="btn" onClick={() => navigate("/")}>Cancel</button>
+        {/* <button className="btn" onClick={() => navigate("/")}>Cancel</button> */}
+        <button 
+  className="btn" 
+  onClick={() => window.location.href = `https://preview-rls09.congacloud.com/clm/detail/${id}`}
+>
+  Cancel
+</button>
       </div>
     </div>
 
@@ -207,7 +213,13 @@ return (
 
         <div className="bottom-buttons">
           <button className="btn primary" onClick={handleSave}>Save</button>
-          <button className="btn" onClick={() => navigate("/")}>Cancel</button>
+          <button 
+  className="btn" 
+  onClick={() => window.location.href = `https://preview-rls09.congacloud.com/clm/detail/${id}`}
+>
+  Cancel
+</button>
+          {/* <button className="btn" onClick={() => navigate("/")}>Cancel</button> */}
         </div>
 
       </div>
