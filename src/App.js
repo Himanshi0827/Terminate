@@ -38,7 +38,9 @@ function App() {
     <BrowserRouter>
       <Routes>
          <Route path="/callback" element={<Callback />} />
-        <Route path= "/" element={<AgreementExtension/>}/>
+   <Route path="/" element={<AgreementExtension />} />
+  <Route path="/:agreementId" element={<AgreementExtension />} />
+        // <Route path= "/" element={<AgreementExtension/>}/>
       </Routes>
     </BrowserRouter>
     </>
