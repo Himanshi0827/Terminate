@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
 import { getAgreementById, updateAgreement } from "../api/api";
-import {  useNavigate , useLocation } from "react-router-dom";
+import {  useParams, useNavigate , useLocation } from "react-router-dom";
 import { fetchAgreement} from "../api/api";
 import "../AgreementExtension.css";
 export default function AgreementExtension() {
- const location = useLocation();//head
+// const location = useLocation();//head
   const navigate = useNavigate();
+const { agreementId } = useParams();   // 👈 from URL
+const location = useLocation();
 
 const id =
-  location.state?.agreementId ||
-  "c6fb1c12-5f42-4012-8c44-adf46ce98b8c";
+  agreementId ||                      // ✅ FIRST priority (URL)
+  location.state?.agreementId ||     // fallback (navigation)
+  null;
+
+if (!id) {
+  console.error("Agreement ID not found in URL or state");
+}
+// const id =
+//   location.state?.agreementId ||
+//   "c6fb1c12-5f42-4012-8c44-adf46ce98b8c";
 
 const agreementName =
   location.state?.agreementName ||
